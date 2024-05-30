@@ -17,7 +17,7 @@ step 3: If greater than the middle point then start point is middle point + 1 an
 #include <iostream>
 using namespace std;
 
-int search(int arr[], int size, int key)
+int binarySearch(int arr[], int size, int key)
 {
     int start = 0;
     int end = size - 1;
@@ -41,7 +41,7 @@ int search(int arr[], int size, int key)
 int main()
 {
     int arr[6] = {2, 4, 6, 8, 10, 12};
-    int index = search(arr, 6, 10);
+    int index = binarySearch(arr, 6, 10);
 
     if (index == -1)
         cout << "Element Not Found";

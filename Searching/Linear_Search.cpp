@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-bool search(int arr[], int size, int key)
+bool linearSearch(int arr[], int size, int key)
 {
     for (int i = 0; i < size; i++)
     {
@@ -17,7 +17,7 @@ bool search(int arr[], int size, int key)
 int main()
 {
     int arr[10] = {5, 2, 3, 8, 9, 5, 6, 4, 2, 55};
-    bool found = search(arr, 10, 55);
+    bool found = linearSearch(arr, 10, 55);
 
     if (found)
         cout << "Key is present";
