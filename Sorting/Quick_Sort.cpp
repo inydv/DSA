@@ -54,6 +54,8 @@ int partition(int *arr, int start, int end)
         if (i < pivotIndex && j > pivotIndex)
             swap(arr[i++], arr[j--]);
     }
+
+    return pivotIndex;
 }
 
 void quickSort(int *arr, int start, int end)
