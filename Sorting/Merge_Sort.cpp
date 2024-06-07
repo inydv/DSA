@@ -20,18 +20,22 @@ void merge(int *arr, int start, int end)
 {
     int mid = start + (end - start) / 2;
 
+    // LENGTH OF TWO SEPRATED ARRAY
     int length1 = mid - start + 1;
     int length2 = end - mid;
 
+    // COPY THE TWO SEPRATED ARRAY
     int *first = new int[length1];
     int *second = new int[length2];
 
+    // COPY VALUES TO ARRAY 1
     int mainArrayIndex = start;
     for (int i = 0; i < length1; i++)
     {
         first[i] = arr[mainArrayIndex++];
     }
 
+    // COPY VALUES TO ARRAY 2
     mainArrayIndex = mid + 1;
     for (int i = 0; i < length2; i++)
     {

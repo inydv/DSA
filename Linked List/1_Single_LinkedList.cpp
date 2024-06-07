@@ -7,68 +7,60 @@ public:
     int data;
     Node *next;
 
-    // CONSTRUCTOR TO ADD NEW NODE
     Node(int data)
     {
         this->data = data;
         this->next = NULL;
     }
 
-    // DESTRUCTOR TO REMOVE NODE AND FREE SPACE
     ~Node()
     {
-        int value = this->data;
-
+        // delete head will run this
         if (this->next != NULL)
         {
-            delete next;
+            delete next; // delete recursively
             this->next = NULL;
         }
     }
 };
 
-void InsertAtHead(Node *&head, int value)
+void insertAtHead(Node *&head, int key)
 {
-    Node *temp = new Node(value);
+    Node *temp = new Node(key);
     temp->next = head;
     head = temp;
 }
 
-void InsertAtTail(Node *&tail, int value)
+void insertAtTail(Node *&head, int key)
 {
-    Node *temp = new Node(value);
-    tail->next = temp;
-    tail = temp;
-}
-
-void InsertAtPosition(Node *&tail, Node *&head, int position, int value)
-{
-    if (position == 1)
+    Node *temp = new Node(key);
+    if (head == NULL)
     {
-        InsertAtHead(head, value);
+        head = temp;
         return;
     }
+    Node *current = head;
+    while (current->next != NULL)
+    {
+        current = current->next;
+    }
+    current->next = temp;
+}
 
+void printFunc(Node *head)
+{
     Node *temp = head;
-    int count = 1;
 
-    while (count < position - 1)
+    while (temp != NULL)
     {
+        cout << temp->data << " ";
         temp = temp->next;
-        count++;
     }
 
-    if (temp->next == NULL)
-    {
-        InsertAtTail(tail, d);
-        return;
-    }
-
-    Node *nodeToInsert = new Node(value);
-    temp->next = nodeToInsert;
+    cout << endl;
 }
 
-void deleteNode(int position, Node *&head)
+void deleteNode(Node *&head, int position)
 {
     if (position == 1)
     {
@@ -83,7 +75,6 @@ void deleteNode(int position, Node *&head)
         Node *prev = NULL;
 
         int count = 1;
-
         while (count < position)
         {
             prev = curr;
@@ -91,46 +82,58 @@ void deleteNode(int position, Node *&head)
             count++;
         }
 
-        prev->next = current->next;
+        prev->next = curr->next;
         curr->next = NULL;
         delete curr;
     }
 }
 
-void print(node *&head)
+void insertAtPosition(Node *&head, int position, int key)
 {
-    Node *temp = head;
-
-    while (temp != NULL)
+    if (position == 1)
     {
-        cout << temp->data << " ";
-        temp = temp->next;
+        insertAtHead(head, key);
+        return;
     }
 
-    cout << endl;
+    Node *newNode = new Node(key);
+    Node *temp = head;
+    int count = 1;
+
+    while (count < position - 1 && temp != NULL)
+    {
+        temp = temp->next;
+        count++;
+    }
+
+    if (temp == NULL || temp->next == NULL)
+    {
+        insertAtTail(head, key);
+        return;
+    }
+
+    newNode->next = temp->next;
+    temp->next = newNode;
 }
 
 int main()
 {
     Node *node1 = new Node(10);
-    Node *head = node1;
-    Node *tail = node1;
+    Node *node2 = new Node(20);
+    Node *node3 = new Node(30);
+    Node *node4 = new Node(40);
+    Node *node5 = new Node(50);
 
-    print(head);
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = node4;
+    node4->next = node5;
 
-    // InsertAtHead(head, 12);
-    InsertAtTail(head, 12);
-    print(head);
-
-    // InsertAtHead(head, 15);
-    InsertAtTail(head, 15);
-    print(head);
-
-    InsertAtPosition(tail, head, 3, 22);
-    print(head);
-
-    deleteNode(1, head);
-    print(head);
+    insertAtHead(node1, 0);
+    insertAtTail(node1, 60);
+    deleteNode(node1, 4);
+    insertAtPosition(node1, 4, 30);
+    printFunc(node1);
 
     return 0;
 }

@@ -19,8 +19,6 @@ public:
     // DESTRUCTOR TO REMOVE NODE AND FREE SPACE
     ~Node()
     {
-        int value = this->data;
-
         if (this->next != NULL)
         {
             delete next;
