@@ -47,7 +47,7 @@ void insertAtTail(Node *&head, int key)
     current->next = temp;
 }
 
-void printFunc(Node *head)
+void printFunc(Node *&head)
 {
     Node *temp = head;
 
@@ -129,10 +129,12 @@ int main()
     node3->next = node4;
     node4->next = node5;
 
+    printFunc(node1);
+
     insertAtHead(node1, 0);
     insertAtTail(node1, 60);
-    deleteNode(node1, 4);
-    insertAtPosition(node1, 4, 30);
+    // deleteNode(node1, 4);
+    // insertAtPosition(node1, 4, 30);
     printFunc(node1);
 
     return 0;

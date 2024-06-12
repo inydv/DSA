@@ -128,7 +128,7 @@ void deleteNode(int position, Node *&head)
     }
 }
 
-void print(node *&head)
+void print(Node *&head)
 {
     Node *temp = head;
 
