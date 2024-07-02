@@ -15,7 +15,7 @@ public:
 
     ~Node()
     {
-        if (this->next != NULL)
+        while (this->next != NULL)
         {
             delete next; // delete recursively
             this->next = NULL;
