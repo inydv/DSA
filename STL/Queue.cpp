@@ -4,33 +4,28 @@ using namespace std;
 
 int main()
 {
-    // CREATION OF QUEUE
-    queue<int> q;
+    queue<string> cars;
+    queue<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
 
-    // PUSH OPERATION
-    q.push(2);
+    // Push / Pop
+    cars.push("Volvo");
+    cars.pop();
 
-    // FRONT OF QUEUE
-    cout << q.front();
+    // Front / Back Element
+    cout << "First Element : " << cars.front();
+    cout << "Last Element : " << cars.back();
 
-    // BACK OF QUEUE
-    cout << q.back();
+    // Size of an filled element
+    cout << "Size : " << cars.size();
 
-    // POP OPERATION
-    q.pop();
-
-    // CHECK WHEATHER QUEUE IS EMPTY OR NOT
-    if (q.empty())
+    // Loop
+    for (int i : cars)
     {
-        cout << "Queue is empty";
-    }
-    else
-    {
-        cout << "Queue is not empty";
+        cout << i << "";
     }
 
-    // SIZE OF STACK
-    cout << "Size of Queue : " << s.size();
+    // Check empty or not
+    cars.empty();
 
     return 0;
 }

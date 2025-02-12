@@ -21,8 +21,8 @@ void merge(int *arr, int start, int end)
     int mid = start + (end - start) / 2;
 
     // LENGTH OF TWO SEPRATED ARRAY
-    int length1 = mid - start + 1;
-    int length2 = end - mid;
+    int length1 = mid - start;
+    int length2 = end - mid + 1;
 
     // COPY THE TWO SEPRATED ARRAY
     int *first = new int[length1];
@@ -36,7 +36,7 @@ void merge(int *arr, int start, int end)
     }
 
     // COPY VALUES TO ARRAY 2
-    mainArrayIndex = mid + 1;
+    mainArrayIndex = mid;
     for (int i = 0; i < length2; i++)
     {
         second[i] = arr[mainArrayIndex++];

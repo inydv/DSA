@@ -63,6 +63,11 @@ public:
 
         return false;
     }
+
+    ~Stack()
+    {
+        delete[] arr;
+    }
 };
 
 int main()

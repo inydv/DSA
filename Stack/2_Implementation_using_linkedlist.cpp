@@ -79,6 +79,7 @@ public:
         {
             Node *temp = topNode;
             topNode = topNode->next;
+            temp->next = NULL;
             delete temp;
         }
     }

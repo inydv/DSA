@@ -4,30 +4,27 @@ using namespace std;
 
 int main()
 {
-    // CREATION OF STACK
-    stack<int> s;
+    stack<string> cars;
+    stack<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
 
-    // PUSH OPERATION
-    s.push(2);
+    // Push / Pop
+    cars.push("Volvo");
+    cars.pop();
 
-    // POP OPERATION
-    s.pop();
+    // Get top
+    cout << cars.top(); // Outputs "Mazda"
 
-    // PRINT TOP ELEMENT
-    cout << s.top();
+    // Size of an filled element
+    cout << "Size : " << cars.size();
 
-    // CHECK WHEATHER STACK IS EMPTY OR NOT
-    if (s.empty())
+    // Loop
+    for (int i : cars)
     {
-        cout << "Stack is empty";
-    }
-    else
-    {
-        cout << "Stack is not empty";
+        cout << i << "";
     }
 
-    // SIZE OF STACK
-    cout << "Size of stack : " << s.size();
+    // Check empty or not
+    cars.empty();
 
     return 0;
 }

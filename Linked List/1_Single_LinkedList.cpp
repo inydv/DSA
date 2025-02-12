@@ -47,6 +47,34 @@ void insertAtTail(Node *&head, int key)
     current->next = temp;
 }
 
+void insertAtPosition(Node *&head, int position, int key)
+{
+    if (position == 1)
+    {
+        insertAtHead(head, key);
+        return;
+    }
+
+    Node *newNode = new Node(key);
+    Node *temp = head;
+    int count = 1;
+
+    while (count < position - 1 && temp != NULL)
+    {
+        temp = temp->next;
+        count++;
+    }
+
+    if (temp == NULL || temp->next == NULL)
+    {
+        insertAtTail(head, key);
+        return;
+    }
+
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+
 void printFunc(Node *&head)
 {
     Node *temp = head;
@@ -86,34 +114,6 @@ void deleteNode(Node *&head, int position)
         curr->next = NULL;
         delete curr;
     }
-}
-
-void insertAtPosition(Node *&head, int position, int key)
-{
-    if (position == 1)
-    {
-        insertAtHead(head, key);
-        return;
-    }
-
-    Node *newNode = new Node(key);
-    Node *temp = head;
-    int count = 1;
-
-    while (count < position - 1 && temp != NULL)
-    {
-        temp = temp->next;
-        count++;
-    }
-
-    if (temp == NULL || temp->next == NULL)
-    {
-        insertAtTail(head, key);
-        return;
-    }
-
-    newNode->next = temp->next;
-    temp->next = newNode;
 }
 
 int main()

@@ -5,16 +5,23 @@ using namespace std;
 
 int main()
 {
-    int basic[3] = {1, 2, 3};
+    // Initialization
     array<int, 3> a = {1, 2, 3};
-
-    int size = a.size();
-
+    
+    // Get / Front / Back Element
     cout << "Element at 2nd Index : " << a.at(2);
-    cout << "Empty or not : " << a.empty();
-
     cout << "First Element : " << a.front();
     cout << "Last Element : " << a.back();
+
+    // Size of an filled element
+    int size = a.size();
+
+    // Loop
+    for (int i : a)
+        cout << a[i];
+
+    // Check empty or not
+    cout << "Empty or not : " << a.empty();
 
     return 0;
 }

@@ -1,4 +1,4 @@
-// COUNT PRIMES
+// COUNT PRIME NUMBER TILL THE GIVEN NUMBER N
 // TIME COMPLEXITY - O(n * log(log n))
 
 #include <iostream>

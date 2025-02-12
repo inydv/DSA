@@ -4,35 +4,31 @@ using namespace std;
 
 int main()
 {
-    // CREATION OF QUEUE
-    deque<int> q;
+    deque<string> cars;
+    deque<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
 
-    // PUSH OPERATION
-    q.push_front(2);
-    q.push_back(3);
+    // Push / Pop
+    cars.push_front("Volvo");
+    cars.push_back("Volvo");
+    cars.pop_front();
+    cars.pop_back();
 
-    // FRONT OF QUEUE
-    cout << q.front();
+    // Get / Front / Back Element
+    cout << "First Element : " << cars.at(0);
+    cout << "First Element : " << cars.front();
+    cout << "Last Element : " << cars.back();
 
-    // BACK OF QUEUE
-    cout << q.back();
+    // Size of an filled element
+    cout << "Size : " << cars.size();
 
-    // POP OPERATION
-    q.pop_front();
-    q.pop_back();
-
-    // CHECK WHEATHER QUEUE IS EMPTY OR NOT
-    if (q.empty())
+    // Loop
+    for (int i : cars)
     {
-        cout << "Queue is empty";
-    }
-    else
-    {
-        cout << "Queue is not empty";
+        cout << i << "";
     }
 
-    // SIZE OF STACK
-    cout << "Size of Queue : " << s.size();
+    // Check empty or not
+    cars.empty();
 
     return 0;
 }
