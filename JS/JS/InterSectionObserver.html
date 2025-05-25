@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inersection Observer</title>
+
+    <style>
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: .25rem;
+            padding: 2rem;
+            transform: translateX(100px);
+            opacity: 0;
+            transition: 150ms;
+        }
+
+        .card.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <div class="card">This is First Card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is a card</div>
+        <div class="card">This is Last card</div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll(".card");
+        const cardContainer = document.querySelector('.card-container');
+
+        // const Observer = new IntersectionObserver(entries => {
+        //     entries.forEach(entry => {
+        //         entry.target.classList.toggle("show", entry.isIntersecting);
+        //     });
+        // })
+
+        // const Observer = new IntersectionObserver(entries => {
+        //     entries.forEach(entry => {
+        //         entry.target.classList.toggle("show", entry.isIntersecting);
+        //     });
+        // }, {
+        //     threshold: 1    // if 1 then 100% element should visible on screen, if 0 then as soon as element about to be visible on screen (default: 0), can be 0.5 i.e. between 0 and 1
+        // })
+
+        // const Observer = new IntersectionObserver(entries => {
+        //     entries.forEach(entry => {
+        //         entry.target.classList.toggle("show", entry.isIntersecting);
+        //         if (entry.isIntersecting) Observer.unobserve(entry.target);
+        //     });
+        // }, {
+        //     threshold: 1
+        // })
+
+        // const Observer = new IntersectionObserver(entries => {
+        //     entries.forEach(entry => {
+        //         entry.target.classList.toggle("show", entry.isIntersecting);
+        //         if (entry.isIntersecting) Observer.unobserve(entry.target);
+        //     });
+        // }, {
+        //     root: cardContainer,   // container
+        //     rootMargin: "-100px"    // shrink and expand the container intersecting
+        // })
+
+        const Observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle("show", entry.isIntersecting);
+            });
+        }, {
+            threshold: 1
+        });
+
+        const lastCardObserver = new IntersectionObserver(entries => {
+            const lastCrd = entries[0];
+
+            if (!lastCrd.isIntersecting) return;
+            loadNewCards();
+            lastCardObserver.unobserve(lastCrd.target);
+            lastCardObserver.observe(document.querySelector(".card:last-child"));
+        }, {});
+
+        lastCardObserver.observe(document.querySelector(".card:last-child"))
+
+        cards.forEach(card => {
+            Observer.observe(card);
+        });
+
+        function loadNewCards() {
+            for (let i = 0; i < 10; i++) {
+                const card = document.createElement("div");
+                card.textContent = "New Card";
+                card.classList.add("card");
+                Observer.observe(card);
+                cardContainer.append(card);
+            }
+        }
+    </script>
+</body>
+
+</html>

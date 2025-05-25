@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispatch Event</title>
+</head>
+
+<body>
+  <script>
+    const myCustomEvent = new CustomEvent("myCustomEvent", {
+      detail: { message: "Hello from custom event", value: 48 }, // Event don't have detail but customEvent have detail
+      bubbles: true, // bubbles property determines if the event propagates up the DOM tree
+      cancelable: true, // cancelable determines if the default action can be prevented.
+    });
+
+    document.addEventListener("myCustomEvent", (e) => {
+      console.log(e);
+    })
+
+    document.dispatchEvent(myCustomEvent);
+  </script>
+</body>
+
+</html>
