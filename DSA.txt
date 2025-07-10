@@ -1,0 +1,113 @@
+***** Algorithm *****
+
+1. Searching - DONE
+	- Linear Search
+	- Binary Search
+	- Binary Search (Recursive)
+
+2. Sorting
+	- Selection Sort
+	- Bubble Sort
+	- Insertion Sort
+	- Merge Sort
+	- Quick Sort
+	-/ Heap Sort
+
+3. Maths
+	- Euclid's Alogo For GCD
+	- Sieve of Eratosthenes
+	-/ Segmented Sieve
+	-/ Bit Manipulation
+	-/ LCM
+	-/ Fast Exponantial (Modular Arithmetic) - Factorial of number
+	-/ Pigeonhole Principle
+	-/ Catalon Number
+	-/ Inclusion/Exclusion Principle
+
+4. Tree
+	- Inorder Traversal
+	- Preorder Traversal
+	- Postorder Traversal
+	- Levelorder Traversal
+	- Kruskal's
+
+5. Graph
+	- DFS
+	- BFS
+	- Dijkstra
+
+6. DP
+	- Floyd-warshall
+
+7. BackTracking
+	- N-queen Problem
+	- Sum of Subsets Problem
+	- Graph Colouring and Hanitonian Cycle
+
+8. Huffman Coding Compression Alogorithm
+	- Building a Huffman Tree
+	- Traversing The Tree And Assigning Codes To Characters Based On Their Frequency Of Occurrence.
+
+
+
+***** Miscellaneous *****
+
+1. Number Theory
+2. Segment Tree
+3. DP with Trees
+4. String Algorithm
+5. Sliding Window
+
+
+
+***** Questions *****
+
+1. DP
+	- Memoisation
+	- Tabulation
+
+2. Graph
+	- Shortest Path From Source To All Vertices : Dijkstra
+	- Shortest Path From Every Vertex To Every Other Vertices : Floyd Warshall
+	- Minimum Spanning Tree : Prim, Kruskal
+	- Stringly Connected Components : Kosaraju's
+	- Topological Sort
+	- Shortest Path From Source To All Vertices With Negative Edges : Bellman Ford
+	- Normal DSU
+	- DSU By Rank
+
+
+
+***** Binary Search *****
+
+1. First/Last Occurrence of an Element in array
+2. Peak in a Mountain Array
+3. Find Pivot in an array
+4. Search in a rotated & Sorted array
+5. Peak in a Mountain Array
+6. Square Root of an Integer
+7. Book Allocation Problem
+8. Aggressive Cows
+9. Painter’s Partition Problem
+10. EKO SPOJ
+11. PRATA SPOJ
+
+
+
+***** Recursion *****
+
+1. Subsets / Subsequences
+2. Perutation
+3. Phone Keypad Problem
+4. Rat in a maze
+
+
+
+***** Stack *****
+
+1. Celebrity Problem
+2. Max Rectangle in Binary Matrix with all 1's
+3. Next Smaller Element
+4. Largest Rectangular Area in Histogram
+5. N Stacks in an Array
+6. Design a stack that supports getMin() in O(1) time and O(1) extra space

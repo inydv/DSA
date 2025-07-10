@@ -20,12 +20,10 @@ class CircularQueue {
       return false;
     }
 
-    if (this.isEmpty()) {
-      this.front = 0;
-    }
+    if (this.isEmpty()) this.rear = this.front = 0;
+    else this.rear = (this.rear + 1) % this.capacity;
 
-    this.rear = (this.rear + 1) % this.capacity;
-    this.items[this.rear] = element;
+    this.arr[this.rear] = data;
     this.size++;
     return true;
   }
